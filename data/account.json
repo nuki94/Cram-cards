@@ -1,0 +1,16 @@
+{
+  "username" : "pesho",
+  "email" : "pesho@abv.bg",
+  "firstname" : "petyr",
+  "lastname" : "petrov",
+  "playeddecks" : [
+{
+"name": "java",
+"score" : 80
+},
+{
+"name": "javascript",
+"score" : 70
+}
+]
+}

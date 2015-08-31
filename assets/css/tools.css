@@ -1,0 +1,59 @@
+.fleft {
+    float : left;
+}
+
+.fright {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block{
+    display: block;
+}
+
+h2 {
+    color: #331A0F;
+    font-size: 2.5em;
+    text-shadow: 1px 1px #BA4B3C;
+    margin: 0;
+}
+
+.formbackground {
+    background:  url("../gallery/username-icon.png") no-repeat;
+}
+
+.border-none{
+    border: none;
+}
+
+form.form .error {
+    color: #ff0000;
+}
+
+.hidden {
+    display: none;
+}
+
+.font{
+    font-family: Yanone-Regular;
+    font-size: 1.4em;
+    color: #331A0F;
+}
+
+.height-button {
+    height: 55px;
+}
+.none{
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}

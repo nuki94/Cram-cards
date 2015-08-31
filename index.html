@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/tools.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="assets/js/Promise.js"></script>
+    <script type="text/javascript" src="assets/js/Ajax.js"></script>
+    <script type="text/javascript" src="assets/js/cards.js"></script>
+    <script type="text/javascript" src="assets/js/Deck.js"></script>
+    <script type="text/javascript" src="assets/js/PlayedDeck.js"></script>
+    <script type="text/javascript" src="assets/js/Config.js"></script>
+    <script type="text/javascript" src="assets/js/Validation.js"></script>
+    <script type="text/javascript" src="assets/js/User.js"></script>
+    <script type="text/javascript" src="assets/js/registration.js"></script>
+    <script type="text/javascript" src="assets/js/events.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+
+
+</head>
+<body>
+<div id="container">
+    <header>
+        <div id="head" class="inline-block fleft">
+            <div id="logo-cram" class="fleft">
+                <a id="site-logo" class="pointer"><img src="assets/gallery/logo.png" alt="Cram Cards" width="300" height="180"></a>
+            </div>
+            <a class="pointer" id="site-heading"><h1 class="inline-block">Cram Cards</h1></a>
+        </div>
+        <nav>
+            <ul id="navBar">
+                <li class="fleft pointer"><a id="browse">Browse</a></li>
+                <li class="fleft pointer"><a id="create">Create deck</a></li>
+                <li  class="fleft pointer"><a id="account">Log in</a></li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+
+    <div id="index-container">
+            <h2 id="CategoriesHeading">Categories</h2>
+            <div id="categories" class="fleft">
+                <ul id="first" class="fleft">
+                    <li><a id="1" class="sports pointer">Sport</a></li>
+                    <li><a id="2" class="education pointer">Education</a></li>
+                    <li><a id="3" class="pointer">Culture</a></li>
+                    <li><a id="4" class="exam pointer">Exam</a></li>
+                    <li><a id="5" class="language pointer">Language</a></li>
+                </ul>
+                <ul id="second" class="fleft">
+                    <li><a id="6" class="computers pointer">Computers</a></li>
+                    <li><a id="7" class="course-subjects pointer">Course Subjects</a></li>
+                    <li><a id="8" class="careers pointer">Careers</a></li>
+                    <li><a id="9" class="medical pointer">Medical</a></li>
+                    <li><a id="10" class="others pointer">Other</a></li>
+                </ul>
+            </div>
+            <div id="create-cards" class="fright">
+                <div >
+                    <img id="create-cards-image" src="assets/gallery/flashcardscreate.png" alt="Flash Cards" width="200" height="100">
+                </div>
+                <div>
+                    <input type="submit" id="createCardsIndex" value="Create Cards" />
+                </div>
+                <div>
+                    <h2>Make your own cards</h2>
+                </div>
+            </div>
+    </div>
+
+    <div id="login-container">
+        <section id="login-form" class="form fleft">
+            <form method="" onsubmit="return false">
+                <h1>Login</h1>
+                <div>
+                    <input type="text" placeholder="Username" name="username" required="" id="username"/>
+                    <p></p>
+                </div>
+
+                <div>
+                    <input type="password" placeholder="Password" name="password" required="" id="password"/>
+                    <p id="login-error"></p>
+                </div>
+                <div>
+                    <input  id="send-login" type="submit" value="Log in" />
+                </div>
+
+                <div>
+                            <span>
+                                <img src="assets/gallery/vermas_03.png" width="80" height="40">
+                            </span>
+                    <a id="signUpButton" style="cursor: pointer" onclick="">Sign up</a>
+                </div>
+            </form><!-- form -->
+        </section>
+        <section id="registration-form" class="form fleft" style="display: none">
+            <form action="" onsubmit="return false">
+                <h1>Registration</h1>
+                <div>
+                    <input type="text" name="username" placeholder="Username" id="username1" required=""/>
+                    <p class="error"></p>
+                </div>
+                <div>
+                    <input type="text" placeholder="First name" required="" name="firstname" id="firstname">
+                    <p class="error"></p>
+
+                </div>
+                <div>
+                    <input type="text" placeholder="Last name" required="" name="lastname" id="lastname">
+                    <p class="error"></p>
+
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="E-mail" required="" id="email" onchange="checkEmail()"/>
+                    <p class="error"></p>
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password" id="password2" required="" onchange="checkPassword()"/>
+                    <p  class="error"></p>
+                </div>
+                <div>
+                    <input type="password" placeholder="Confirm password" id="password3" required="" onchange="checkConfirmPassword()"/>
+                    <p  class="error"></p>
+                </div>
+                <div>
+                    <input id="send-registration" type="submit" value="Sign up" />
+                </div>
+            </form><!-- form -->
+        </section>
+        <section>
+            <div id="flashcards">
+                <img src="assets/gallery/flashcards.png" alt="Flash Cards" width="450" height="250">
+            </div>
+            <div id="h2">
+                <h2>Make studying easier</h2>
+            </div>
+        </section>
+    </div>
+
+    <div id="decks-container">
+        <h2 id="categoryTitleHeading">Category Title</h2>
+        <div id="decksTable">
+            <form>
+                <input id="allDecks" type="radio" name="decks" value="allDecks" checked/>
+                <label for="allDecks"><span><div></div></span>All Decks</label>
+                <input id="myDecks" type="radio" name="decks" value="myDecks"/>
+                <label for="myDecks"><span><div></div></span>My Decks</label>
+                <input id="sharedDecks" type="radio" name="decks" value="sharedDecks"/>
+                <label for="sharedDecks"><span><div></div></span>Shared Decks</label>
+            </form>
+
+            <div id="allDecksList"></div>
+            <div id="myDecksList"></div>
+            <div id="sharedDecksList"></div>
+            <!--<div class="deck">
+                <p class="deckTitle">Java</p>
+                <div class="fleft leftPart">
+                    <p class="deckDescription">Common java terms</p>
+                    <p class="deckAuthor">Author: Pesho</p>
+                    <p class="deckCards">9 Cram cards</p>
+                </div>
+                <div class="fright rightPart">
+                    <p class="deckViews">Views: 123</p>
+                    <p class="deckDate">Created: September 2015</p>
+                </div>
+            </div>
+
+            <div class="mydeck">
+                <p class="deckTitle">Java</p>
+                <div class="fleft leftPart">
+                    <p class="deckDescription">Common java terms</p>
+                    <p class="deckAuthor">Author: Pesho</p>
+                    <p class="deckCards">9 Cram cards</p>
+                </div>
+                <div class="fright rightPart">
+                    <a href="#edit"><span class="fa fa-pencil fright"></span></a>
+                    <a href="#remove"><span class="fa fa-trash-o fright"></span></a>
+                    <p class="deckViews">Views: 123</p>
+                    <p class="deckDate">Created: September 2015</p>
+                </div>
+            </div>
+
+            <div class="shareddeck">
+                <p class="deckTitle">Java</p>
+                <div class="fleft leftPart">
+                    <p class="deckDescription">Common java terms</p>
+                    <p class="deckAuthor">Author: Pesho</p>
+                    <p class="deckCards">9 Cram cards</p>
+                </div>
+                <div class="fright rightPart">
+                    <p class="deckViews">Views: 123</p>
+                    <p class="deckDate">Created: September 2015</p>
+                </div>
+            </div>-->
+
+        </div>
+    </div>
+
+    <div id="createdeck-container">
+        <section id="createdeck-form" class = "form fleft block border-none">
+            <form onsubmit="return false">
+                <ul class="form-fields">
+                    <li class="fleft">
+                        <ul>
+                            <li>
+                                <label class="block font">
+                                    Categories
+                                </label>
+                                <select name="categoryid" id="categories2">
+                                    <option selected></option>
+                                    <option class="font" value="sport">Sport</option>
+                                    <option class="font" value = "education">Education</option>
+                                    <option class="font" value="culture">Culture</option>
+                                    <option class="font" value="exam">Exam</option>
+                                    <option class="font" value="language">Language</option>
+                                    <option class="font" value="computers">Computers</option>
+                                    <option class="font" value="course-subjects">Course Subjects</option>
+                                    <option class="font" value="careers">Careers</option>
+                                    <option class="font" value="medical">Medical</option>
+                                    <option class="font" value="other">Other</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label  for="title" class="required font block">
+                                    Set Title
+                                </label>
+                                <input  type="text" name="title" id="title" value="" maxlength="200" required="">
+                            </li>
+                            <li>
+                                <label for="access" class="font required block">
+                                    Access
+                                </label>
+                                <select name="isPublic" id="access" class=>
+                                    <option selected></option>
+                                    <option class="font" value="public" label="Public">Public</option>
+                                    <option class="font" value="private" label="Private">Private</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li id="descriptionBox" class="">
+                                <label for="description" class="font block">
+                                    Description
+                                </label>
+                                <textarea name="description" id="description" maxlength="2000" cols="1" rows="1"></textarea>
+                            </li>
+                            <li>
+                                <div>
+                                    <input id="create-deck-send" type="submit" value="Create deck"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </div>
+
+    <div id="createcards-container">
+        <h2 id="deckTitleHeading">Deck Title</h2>
+
+        <div id="createcards-form" class = "form border-none">
+            <form>
+                <div class="fleft">
+                    <label class="block font">
+                        Front
+                    </label>
+                    <textarea name="front" style="width: 320px;" class="front-card-description" maxlength="2000" cols="1" rows="1"></textarea>
+                </div>
+                <div>
+                    <label class="block font">
+                        Back
+                    </label>
+                    <textarea name="back" style="width: 320px;" class="back-card-description" maxlength="2000" cols="1" rows="1"></textarea>
+                </div>
+                <div id = "button-send" class="fleft height-button">
+                    <input id="send-cards" type="submit" value="Save cards"/>
+                </div>
+                <div class="fright height-button" style="padding-right: 50px">
+                    <button  id="add-new-card" type="button">Add new card</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="account-container">
+        <h2 id="accountHeading">Account Information</h2>
+        <div id="accountInfo">
+            <div id="userData">
+                <p id="acc-username"></p>
+                <p id="acc-firstname"></p>
+                <p id="acc-lastname"></p>
+                <p id="acc-email"></p>
+            </div>
+            <p id="tableTitle">Played Decks:</p>
+            <div id="playedDecks">
+                <!--<div class="playeddeck">
+                    <p class="deckName inline-block fleft">Java</p>
+                    <p class="deckScore inline-block fright">score: </p>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div id="share-container">
+        <h2 id="shareHeading">Share Deck</h2>
+        <div id="shareDeck" class="form">
+            <form onsubmit= "return false">
+                <div>
+                    <input type="email" name="email" placeholder="E-mail" required="" id="share-email"/>
+                    <p id="share-error"></p>
+                </div>
+                <div>
+                    <input  id="share-deck-send" type="submit" value="Share Deck" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+        <div id="cards-container">
+            <div class="counters">
+                <p id="counter1" class="fleft">Right: 0</p>
+                <p id="counter2" class="fright">Wrong: 0</p>
+            </div>
+            <div id="wrapper">
+                <div id="card">
+                    <div class="front face">
+                        <p id="question">Question</p>
+                    </div>
+                    <div class="back face">
+                        <p id="answer">Answer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="progress-bar">
+                <progress class="block" value="0" max="10"></progress>
+            </div>
+            <div id="flip-button">
+                <button class="block" id="flip">Flip</button>
+            </div>
+
+            <div id="saveResults-button">
+                <button class="block" id="saveResults">Save Results</button>
+            </div>
+
+            <div id="guess-buttons">
+                <button  class="inline-block fleft" id="right">I was right</button>
+                <button  class="inline-block fright" id="wrong">I was wrong</button>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <img src="assets/gallery/it-talents-logo.png" id="it-talents-logo">
+        <div class="team">
+            <p class="title">The Team:</p>
+            <div class="inline-block participants">
+                <p class="title">Java EE</p>
+                <p>Georgi Donev</p>
+                <p>Stanislav Atanasov</p>
+            </div>
+            <div class="inline-block participants">
+                <p class="title">JavaScript 1</p>
+                <p>Radoslav Nikolov</p>
+                <p>Nuray Fahri</p>
+            </div>
+        </div>
+        <div class="social">
+            <img src="assets/icons/facebook.png" width="32px" height="32px">
+            <img src="assets/icons/twitter.png" width="32px" height="32px">
+            <img src="assets/icons/google.png" width="32px" height="32px">
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>

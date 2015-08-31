@@ -1,0 +1,24 @@
+[{
+  "cardid" : 1,
+  "deck" : "java",
+  "front" : "What is JRE? ",
+  "back" : "Java Runtime Environment"
+}, {
+  "cardid" : 2,
+  "deck" : "java",
+  "front" : "What is JVM?",
+  "back" : "Java Virtual Machine"
+},
+  {
+    "cardid" : 3,
+    "deck" : "fsa",
+    "front" : "Whdss",
+    "back" : "Javadsaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaa  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Virdssahine"
+  },
+  {
+    "cardid" : 4,
+    "deck" : "sds",
+    "front" : "Wdsds",
+    "back" : "Javadsaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaa Virdssahine"
+  }
+]

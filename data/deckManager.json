@@ -1,0 +1,34 @@
+[{
+"deckid" : 1,
+"title" : "Java",
+"category" : 2,
+"description" : "common java terms",
+"cards" : 14,
+"created" : "September 2015",
+"author" : "pesho",
+"viewed" : 123,
+"shared" : false,
+"public" : true
+}, {
+"deckid" : 2,
+"title" : "toefl",
+"category" : 2,
+"description" : "toelf exam practice",
+"cards" : 55,
+"created" : "January 2015",
+"author" : "Gosho",
+"viewed" : 15,
+"shared" : false,
+"public" : true
+},{"deckid" : 3,
+  "title" : "toefl",
+  "category" : 2,
+  "description" : "toelf exam practice",
+  "cards" : 55,
+  "created" : "January 2015",
+  "author" : "Gosho",
+  "viewed" : 15,
+  "shared" : true,
+  "public" : false}
+]
+
